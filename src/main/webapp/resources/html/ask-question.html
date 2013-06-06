@@ -23,41 +23,55 @@ body {
 <body>
 
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner ">
+		<div class="navbar-inner">
 			<div class="container">
+				<a data-target=".navbar-responsive-collapse" data-toggle="collapse"
+					class="btn btn-navbar"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> <a href="index.html" class="brand">Колаборатор</a>
+				<div class="nav-collapse collapse navbar-responsive-collapse">
 
-				<div class="row">
-					<div class="span10">
-						<a href="index.html" class="brand">Колаборатор</a>
-						<div class="nav-collapse collapse">
-							<ul class="nav">
-								<li><a href="#about">Войти</a></li>
-								<li><a href="#contact">Зарегистрироваться</a></li>
+					<form action="" class="navbar-search pull-left">
+						<input type="text" placeholder="Введите искомое, идентификатор статьи или вопроса" class="search-query span6">
+					</form>
 
-							</ul>
-						</div>
-					</div>
-					<div class="span2">
-						<form class="navbar-form">
+					<ul class="nav">
+						
+					</ul>
 
-							<div class="input-append">
-								<input class="span3" id="appendedInputButton" type="text">
-								<button class="btn" type="button">
-									<i class="icon-search"></i>
-								</button>
-							</div>
-						</form>
-					</div>
+					<ul class="nav pull-right">
+					
+					<li class="dropdown"><a data-toggle="dropdown"
+							class="dropdown-toggle" href="#">Информация <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Рейтинг Активности</a></li>
+								<li><a href="#">Общие вопросы по проекту</a></li>
+
+								<li class="divider"></li>
+
+								<li><a href="#">Контакты</a></li>
+
+							</ul></li>
+						
+						<li class="dropdown"><a data-toggle="dropdown"
+							class="dropdown-toggle" href="#">Профиль <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Войти</a></li>
+								<li><a href="#">Регистрация</a></li>
+								
+							</ul></li>
+					</ul>
 				</div>
-
-
+				<!-- /.nav-collapse -->
 			</div>
-			<!--/.nav-collapse -->
 		</div>
+		<!-- /navbar-inner -->
 	</div>
 
 
 	<div class="container">
+
+
 
 		<div class="row-fluid">
 			<div class="span10">
@@ -65,22 +79,15 @@ body {
 
 				<ul class="nav nav-tabs">
 					<li><a href="articles.html">Статьи</a></li>
-					<li><a href="#">Категории</a></li>
-					<li><a href="#">Вопросы/Рекомендации</a></li>
+					<li><a href="#">Теги</a></li>
+					<li><a href="questions-answers.html">Вопросы/Рекомендации</a></li>
 					<li class="active"><a href="#">Задать вопрос</a></li>
 				</ul>
 
 
-				<form class="form-horizontal">
-				
-				<div class="control-group">
-						<label class="control-label" for="inputEmail">Електронная почта</label>
-						<div class="controls">
-							<input class="input-xxlarge" type="text" id="inputEmail"
-								placeholder="">
-						</div>
-					</div>
-				
+				<form class="form-horizontal" action="question-suggestions.html">
+
+
 					<div class="control-group">
 						<label class="control-label" for="inputEmail">Заголовок</label>
 						<div class="controls">
@@ -113,8 +120,8 @@ body {
 							</select>
 						</div>
 					</div>
-					
-					
+
+
 					<div class="control-group">
 						<label class="control-label" for="inputPassword">Раздел</label>
 
@@ -126,7 +133,7 @@ body {
 							</select>
 						</div>
 					</div>
-					
+
 
 					<div class="control-group">
 						<div class="controls">
@@ -161,18 +168,48 @@ body {
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="../assets/js/jquery.js"></script>
-	<script src="../assets/js/bootstrap-transition.js"></script>
-	<script src="../assets/js/bootstrap-alert.js"></script>
-	<script src="../assets/js/bootstrap-modal.js"></script>
-	<script src="../assets/js/bootstrap-dropdown.js"></script>
-	<script src="../assets/js/bootstrap-scrollspy.js"></script>
-	<script src="../assets/js/bootstrap-tab.js"></script>
-	<script src="../assets/js/bootstrap-tooltip.js"></script>
-	<script src="../assets/js/bootstrap-popover.js"></script>
-	<script src="../assets/js/bootstrap-button.js"></script>
-	<script src="../assets/js/bootstrap-collapse.js"></script>
-	<script src="../assets/js/bootstrap-carousel.js"></script>
-	<script src="../assets/js/bootstrap-typeahead.js"></script>
-</body>
+
+
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-button.js"></script>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript"
+		src="http://platform.twitter.com/widgets.js"></script>
+	<script src="http://twitter.github.io/bootstrap/assets/js/jquery.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-alert.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-modal.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tab.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-popover.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-button.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-carousel.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-affix.js"></script>
+
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/holder/holder.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
+
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/application.js"></script>
+		
+		</body>
 </html>

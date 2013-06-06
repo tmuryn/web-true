@@ -1,0 +1,22 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Action TLD</short-name>
+	<tag>
+		<name>action</name>
+		<tag-class>com.tiv.webtrue.web.taglib.ActionTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>action</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>redirect</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+
+</taglib>

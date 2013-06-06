@@ -22,39 +22,53 @@ body {
 
 <body>
 
+
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner ">
+		<div class="navbar-inner">
 			<div class="container">
+				<a data-target=".navbar-responsive-collapse" data-toggle="collapse"
+					class="btn btn-navbar"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> <a href="index.html" class="brand">Колаборатор</a>
+				<div class="nav-collapse collapse navbar-responsive-collapse">
 
-				<div class="row">
-					<div class="span10">
-						<a href="index.html" class="brand">Колаборатор</a>
-						<div class="nav-collapse collapse">
-							<ul class="nav">
+					<form action="" class="navbar-search pull-left">
+						<input type="text"
+							placeholder="Введите искомое, идентификатор статьи или вопроса"
+							class="search-query span6">
+					</form>
 
-								<li><a href="#about">Войти</a></li>
-								<li><a href="#contact">Зарегистрироваться</a></li>
+					<ul class="nav">
 
-							</ul>
-						</div>
-					</div>
-					<div class="span2">
-						<form class="navbar-form">
+					</ul>
 
-							<div class="input-append">
-								<input class="span3" id="appendedInputButton" type="text" placeholder="Введите слово , ID статьи или вопроса">
-								<button class="btn" type="button">
-									<i class="icon-search"></i>
-								</button>
-							</div>
-						</form>
-					</div>
+					<ul class="nav pull-right">
+
+						<li class="dropdown"><a data-toggle="dropdown"
+							class="dropdown-toggle" href="#"><i class="icon-info-sign icon-white"></i> Информация <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Рейтинг Активности</a></li>
+								<li><a href="#">Общие вопросы по проекту</a></li>
+
+								<li class="divider"></li>
+
+								<li><a href="#">Контакты</a></li>
+
+							</ul></li>
+
+						<li class="dropdown"><a data-toggle="dropdown"
+							class="dropdown-toggle" href="#"><i class="icon-user icon-white"></i> Профиль <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li ><a href="#">Войти</a></li>
+								<li><a href="#">Регистрация</a></li>
+
+							</ul></li>
+					</ul>
 				</div>
-
-
+				<!-- /.nav-collapse -->
 			</div>
-			<!--/.nav-collapse -->
 		</div>
+		<!-- /navbar-inner -->
 	</div>
 
 
@@ -68,22 +82,22 @@ body {
 
 				<ul class="nav nav-tabs">
 					<li class="active"><a href="#">Статьи</a></li>
-					<li><a href="#">Категории</a></li>
-					<li><a href="#">Вопросы/Рекомендации</a></li>
+					<li><a href="#">Теги</a></li>
+					<li><a href="questions-answers.html">Вопросы/Рекомендации</a></li>
 					<li><a href="ask-question.html">Задать вопрос</a></li>
 				</ul>
 
 
 				<div class="row-fluid">
-					<div class="span10">
+					<div class="span9">
 						<ul class="nav nav-pills">
 							<li class="active"><a href="#">Новые</a></li>
 							<li><a href="#">Популярные</a></li>
 							<li><a href="#"></a></li>
 						</ul>
 					</div>
-					<div class="span2">
-						<button type="button" class="btn btn-primary">Добавить
+					<div class="span3">
+						<button type="button" class="btn btn-primary pull-right">Добавить
 							статью</button>
 					</div>
 				</div>
@@ -131,7 +145,33 @@ body {
 						href="//ad.adriver.ru/cgi-bin/click.cgi?sid=176776&amp;ad=392169&amp;bid=2439498&amp;bt=52&amp;bn=1&amp;pz=0&amp;xpid=BbFpuIt2ntHEJCyLoVEtrIiWClV8&amp;ref=http:%2f%2fhabrahabr.ru%2fposts%2ftop%2f&amp;custom=&amp;rleurl="><img
 						border="0" alt=""
 						src="http://masterh4.adriver.ru/images/0002439/0002439498/0/Ff-4.png"></a>
+
+					<br> <br>
+					<div class="well">
+						Категории
+						 <br> <br>
+						<form class="form-horizontal">
+
+							<select>
+								<option selected="true">Авто, Мото</option>
+								<option>Бизнес, Финансы</option>
+								<option>Еда, Кулинария</option>
+								<option>Знакомства, Любовь, Отношения</option>
+								<option>Красота и Здоровье</option>
+							</select>
+							<br><br>
+							 <select>
+								<option>Автострахование</option>
+								<option>Выбор автомобиля, мотоцикла</option>
+								<option>ГИБДД, Обучение, Права</option>
+							</select> <br> <br>
+							<button type="submit" class="btn">Перейти</button>
+
+
+						</form>
+					</div>
 				</div>
+
 
 			</div>
 		</div>
@@ -142,21 +182,47 @@ body {
 	</div>
 	<!-- /container -->
 
-	<!-- Le javascript
-    ================================================== -->
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-button.js"></script>
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="../assets/js/jquery.js"></script>
-	<script src="../assets/js/bootstrap-transition.js"></script>
-	<script src="../assets/js/bootstrap-alert.js"></script>
-	<script src="../assets/js/bootstrap-modal.js"></script>
-	<script src="../assets/js/bootstrap-dropdown.js"></script>
-	<script src="../assets/js/bootstrap-scrollspy.js"></script>
-	<script src="../assets/js/bootstrap-tab.js"></script>
-	<script src="../assets/js/bootstrap-tooltip.js"></script>
-	<script src="../assets/js/bootstrap-popover.js"></script>
-	<script src="../assets/js/bootstrap-button.js"></script>
-	<script src="../assets/js/bootstrap-collapse.js"></script>
-	<script src="../assets/js/bootstrap-carousel.js"></script>
-	<script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script type="text/javascript"
+		src="http://platform.twitter.com/widgets.js"></script>
+	<script src="http://twitter.github.io/bootstrap/assets/js/jquery.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-alert.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-modal.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tab.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-popover.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-button.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-carousel.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/bootstrap-affix.js"></script>
+
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/holder/holder.js"></script>
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
+
+	<script
+		src="http://twitter.github.io/bootstrap/assets/js/application.js"></script>
+
+
 </body>
 </html>
