@@ -2,18 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	   		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	   		http://www.springframework.org/schema/context
 	   		http://www.springframework.org/schema/context/spring-context-3.1.xsd
 			http://www.springframework.org/schema/mvc 
-			http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
-			 http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd
-			 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-
-	<!-- Root Context: defines shared resources visible to all other web components -->
+			http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
 	<!-- Activates various annotations to be detected in bean classes -->
 	<context:annotation-config />
@@ -21,12 +15,13 @@
 	<!-- Scans the classpath for annotated components that will be auto-registered 
 		as Spring beans. For example @Controller and @Service. Make sure to set the 
 		correct base-package -->
-	<context:component-scan base-package="com.tiv" />
+	<context:component-scan base-package="com.tiv.webtrue.core.model" />
+	<context:component-scan base-package="com.tiv.webtrue.core.dao" />
+	<context:component-scan base-package="com.tiv.webtrue.core.service" />
 
 	<!-- Configures the annotation-driven Spring MVC Controller programming 
 		model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
 	<mvc:annotation-driven />
-
 
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -42,8 +37,5 @@
 	<!-- Database Configuration -->
 	<import resource="database/DataSource.xml" />
 	<import resource="database/Hibernate.xml" />
-
-	
-	<import resource="spring-security.xml" />
 
 </beans>

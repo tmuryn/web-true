@@ -10,7 +10,6 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.DynamicAttributes;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-import com.tiv.webtrue.web.controller.ArticlesController;
 import com.tiv.webtrue.web.controller.NavigationController;
 
 public class ActionTag extends SimpleTagSupport implements DynamicAttributes {
@@ -25,28 +24,29 @@ public class ActionTag extends SimpleTagSupport implements DynamicAttributes {
 
   @Override
   public void doTag() throws JspException, IOException {
-    
-    
+
+
     @SuppressWarnings("unchecked")
     HashMap<String, String> hashMap =
         (HashMap<String, String>) getJspContext().findAttribute(NavigationController.ACTIONS);
-    
-    Set<Map.Entry<String, String>> entries = map.entrySet();
-    String url = hashMap.get(action);
-    
-    if (url != null) {
-      
-      for (Map.Entry<String, String> entry : entries) {
-        url = url.replaceAll("\\{"+entry.getKey()+"\\}", entry.getValue());
+    if (hashMap != null) {
+      Set<Map.Entry<String, String>> entries = map.entrySet();
+      String url = hashMap.get(action);
+
+      if (url != null) {
+
+        for (Map.Entry<String, String> entry : entries) {
+          url = url.replaceAll("\\{" + entry.getKey() + "\\}", entry.getValue());
+        }
+
+      } else {
+        url = "Invalid Url. Please specify correct url for action : " + action;
       }
-      
-    }else{
-      url = "Invalid Url. Please specify correct url for action : "+action;
+
+      JspWriter out = getJspContext().getOut();
+      out.println(url);
     }
-    
-    JspWriter out = getJspContext().getOut();
-    out.println(url);
-    
+
     super.doTag();
   }
 

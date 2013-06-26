@@ -16,6 +16,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
+<script src="//loginza.ru/js/widget.js" type="text/javascript"></script>
 <title>Колаборатор</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
@@ -42,7 +43,7 @@ body {
 				<a data-target=".navbar-responsive-collapse" data-toggle="collapse"
 					class="btn btn-navbar"> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a> <a href="<wt:action action="home" />" class="brand">Колаборатор</a>
+				</a> <a href="home" class="brand">Колаборатор</a>
 				<div class="nav-collapse collapse navbar-responsive-collapse">
 
 					<form action="" class="navbar-search pull-left">
@@ -56,6 +57,16 @@ body {
 					</ul>
 
 					<ul class="nav pull-right">
+
+
+						<li class="dropdown"><a data-toggle="dropdown"
+							class="dropdown-toggle" href="#"><i
+								class="icon-user icon-white"></i> Профиль <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="signin">Войти</a></li>
+								<li><a href="signup">Регистрация</a></li>
+
+							</ul></li>
 
 						<li class="dropdown"><a data-toggle="dropdown"
 							class="dropdown-toggle" href="#"><i
@@ -71,14 +82,7 @@ body {
 
 							</ul></li>
 
-						<li class="dropdown"><a data-toggle="dropdown"
-							class="dropdown-toggle" href="#"><i
-								class="icon-user icon-white"></i> Профиль <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Войти</a></li>
-								<li><a href="#">Регистрация</a></li>
 
-							</ul></li>
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->
@@ -94,7 +98,7 @@ body {
 			<div class="span10">
 
 				<ul class="nav nav-tabs">
-					<li class="active"><a href="#">Статьи</a></li>
+					<li class="active1"><a href="#">Статьи</a></li>
 					<li><a href="#">Теги</a></li>
 					<li><a href="questions-answers.html">Вопросы/Рекомендации</a></li>
 					<li><a href="ask-question.html">Задать вопрос</a></li>
