@@ -11,8 +11,8 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 
-@Entity
-public class AccountDTO extends BaseModelDTO {
+@Entity(name = "Account")
+public class AccountDTO extends BaseDTO {
 
   @Email
   private String email;

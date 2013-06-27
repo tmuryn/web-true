@@ -6,12 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "AccountRole")
-public class AccountRoleDTO extends BaseDTO {
+@Entity(name = "Category")
+public class CategoryDTO extends BaseDTO {
 
-  private Long accountId;
-
-  private int roleId;
+  private String categoryName;
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,20 +18,11 @@ public class AccountRoleDTO extends BaseDTO {
     return id;
   }
 
-  public Long getAccountId() {
-    return accountId;
+  public String getCategoryName() {
+    return categoryName;
   }
 
-  public void setAccountId(Long accountId) {
-    this.accountId = accountId;
+  public void setCategoryName(String categoryName) {
+    this.categoryName = categoryName;
   }
-
-  public int getRoleId() {
-    return roleId;
-  }
-
-  public void setRoleId(int roleId) {
-    this.roleId = roleId;
-  }
-
 }

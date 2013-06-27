@@ -6,8 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class ExpertInventationDTO extends BaseModelDTO {
+@Entity(name = "ExpertInventation")
+public class ExpertInventationDTO extends BaseDTO {
   
   
   private String code;

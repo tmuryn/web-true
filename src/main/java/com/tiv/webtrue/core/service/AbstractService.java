@@ -4,9 +4,9 @@ import java.util.Collection;
 
 import org.hibernate.criterion.Order;
 
-import com.tiv.webtrue.core.dao.dto.BaseModelDTO;
+import com.tiv.webtrue.core.dao.dto.BaseDTO;
 
-public interface AbstractService<T extends BaseModelDTO> {
+public interface AbstractService<T extends BaseDTO> {
 
   public T get(Long id);
 

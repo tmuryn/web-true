@@ -1,12 +1,12 @@
 package com.tiv.webtrue.core.dao.dto;
 
-public enum RoleDTO {
+public enum Role {
 
   USER(1), ADMIN(2), EXPERT(3), MODERATOR(4);
 
   private Integer id;
 
-  private RoleDTO(Integer id) {
+  private Role(Integer id) {
     this.id = id;
   }
 
