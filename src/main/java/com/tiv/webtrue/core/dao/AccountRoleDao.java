@@ -1,7 +1,7 @@
 package com.tiv.webtrue.core.dao;
 
-import com.tiv.webtrue.core.model.AccountRole;
+import com.tiv.webtrue.core.dao.dto.AccountRoleDTO;
 
-public interface AccountRoleDao extends AbstractDao<AccountRole, Long> {
+public interface AccountRoleDao extends AbstractDao<AccountRoleDTO, Long> {
 
 }

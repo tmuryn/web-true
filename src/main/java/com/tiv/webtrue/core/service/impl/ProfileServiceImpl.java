@@ -6,14 +6,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tiv.webtrue.core.dao.AbstractDao;
 import com.tiv.webtrue.core.dao.ProfileDao;
-import com.tiv.webtrue.core.model.Account;
-import com.tiv.webtrue.core.model.Profile;
+import com.tiv.webtrue.core.dao.dto.AccountDTO;
+import com.tiv.webtrue.core.dao.dto.ProfileDTO;
 import com.tiv.webtrue.core.service.AccountService;
 import com.tiv.webtrue.core.service.ProfileService;
 
 @Transactional
 @Service
-public class ProfileServiceImpl extends AbstractServiceImpl<Profile> implements ProfileService {
+public class ProfileServiceImpl extends AbstractServiceImpl<ProfileDTO> implements ProfileService {
 
   @Autowired
   private ProfileDao profileDao;
@@ -22,8 +22,8 @@ public class ProfileServiceImpl extends AbstractServiceImpl<Profile> implements 
   private AccountService accountService;
   
   @Override
-  public void register(Account account, Profile profile) throws AccountDuplicateException {
-    Account savedAccount = accountService.getByEmail(account.getEmail());
+  public void register(AccountDTO account, ProfileDTO profile) throws AccountDuplicateException {
+    AccountDTO savedAccount = accountService.getByEmail(account.getEmail());
     if (savedAccount!=null){
       throw new AccountDuplicateException();
     }
@@ -34,7 +34,7 @@ public class ProfileServiceImpl extends AbstractServiceImpl<Profile> implements 
   }
 
   @Override
-  AbstractDao<Profile, Long> getDao() {
+  AbstractDao<ProfileDTO, Long> getDao() {
     return profileDao;
   }
 

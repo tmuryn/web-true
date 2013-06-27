@@ -1,4 +1,4 @@
-package com.tiv.webtrue.core.model;
+package com.tiv.webtrue.core.dao.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class AccountRole extends BaseModel {
+public class AccountRoleDTO extends BaseModelDTO {
 
   private Long accountId;
 

@@ -1,6 +1,6 @@
-package com.tiv.webtrue.core.model;
+package com.tiv.webtrue.core.dao.dto;
 
-public class Article extends BaseModel {
+public class ArticleDTO extends BaseModelDTO {
   
   private String title;
   private String content;

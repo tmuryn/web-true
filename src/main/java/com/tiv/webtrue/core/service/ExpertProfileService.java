@@ -2,8 +2,8 @@ package com.tiv.webtrue.core.service;
 
 import java.util.Collection;
 
-import com.tiv.webtrue.core.model.Profile;
+import com.tiv.webtrue.core.dao.dto.ProfileDTO;
 
-public interface ExpertProfileService extends AbstractService<Profile> {
-	public Collection<Profile> getByAuthor(String authorEmail);
+public interface ExpertProfileService extends AbstractService<ProfileDTO> {
+	public Collection<ProfileDTO> getByAuthor(String authorEmail);
 }

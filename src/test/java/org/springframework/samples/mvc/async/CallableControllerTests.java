@@ -11,6 +11,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.samples.mvc.AbstractContextControllerTests;
@@ -19,6 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@Ignore
 public class CallableControllerTests extends AbstractContextControllerTests {
 
 	private MockMvc mockMvc;
@@ -41,7 +43,7 @@ public class CallableControllerTests extends AbstractContextControllerTests {
 			.andExpect(content().string("Callable result"));
 	}
 
-	@Test
+	@Test()
 	public void view() throws Exception {
 		MvcResult mvcResult = this.mockMvc.perform(get("/async/callable/view"))
 			.andExpect(request().asyncStarted())

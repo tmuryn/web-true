@@ -9,10 +9,12 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 import java.nio.charset.Charset;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+@Ignore
 public class ResponseControllerTests {
 
 	private MockMvc mockMvc;

@@ -1,8 +1,8 @@
 package com.tiv.webtrue.core.service;
 
-import com.tiv.webtrue.core.model.Account;
+import com.tiv.webtrue.core.dao.dto.AccountDTO;
 
-public interface AccountService extends AbstractService<Account> {
+public interface AccountService extends AbstractService<AccountDTO> {
   
-	public Account getByEmail(String email);
+	public AccountDTO getByEmail(String email);
 }

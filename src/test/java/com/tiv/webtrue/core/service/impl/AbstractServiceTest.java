@@ -6,10 +6,7 @@ import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 
 import org.hibernate.ObjectNotFoundException;
 import org.hibernate.criterion.Order;
@@ -17,11 +14,11 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 
-import com.tiv.webtrue.core.model.Account;
-import com.tiv.webtrue.core.model.BaseModel;
+import com.tiv.webtrue.core.dao.dto.AccountDTO;
+import com.tiv.webtrue.core.dao.dto.BaseModelDTO;
 import com.tiv.webtrue.core.service.AbstractService;
 
-public abstract class AbstractServiceTest<T extends BaseModel>
+public abstract class AbstractServiceTest<T extends BaseModelDTO>
     extends AbstractJUnit4SpringContextTests {
 
   public AbstractServiceTest() {
@@ -34,7 +31,7 @@ public abstract class AbstractServiceTest<T extends BaseModel>
       getService().get(7L);
       fail("Must be exception");
     } catch (ObjectNotFoundException exception) {
-      Assert.assertEquals(exception.getEntityName(), Account.class.getName());
+      Assert.assertEquals(exception.getEntityName(), AccountDTO.class.getName());
     }
 
     T account = createModel();

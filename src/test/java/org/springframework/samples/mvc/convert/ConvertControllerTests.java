@@ -11,11 +11,13 @@ import java.util.Date;
 import java.util.TimeZone;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
 
+@Ignore
 public class ConvertControllerTests {
 	
 	private MockMvc mockMvc;

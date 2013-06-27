@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tiv.webtrue.core.dao.AbstractDao;
-import com.tiv.webtrue.core.model.BaseModel;
+import com.tiv.webtrue.core.dao.dto.BaseModelDTO;
 import com.tiv.webtrue.core.service.AbstractService;
 
 @Service
 @Transactional
-public abstract class AbstractServiceImpl<T extends BaseModel> implements AbstractService<T> {
+public abstract class AbstractServiceImpl<T extends BaseModelDTO> implements AbstractService<T> {
 
   @Override
   public T get(Long id) {

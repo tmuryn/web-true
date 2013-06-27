@@ -3,17 +3,17 @@ package com.tiv.webtrue.web.controller;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.tiv.webtrue.core.model.Account;
-import com.tiv.webtrue.core.model.ExpertInventation;
-import com.tiv.webtrue.core.model.Profile;
+import com.tiv.webtrue.core.dao.dto.AccountDTO;
+import com.tiv.webtrue.core.dao.dto.ExpertInventationDTO;
+import com.tiv.webtrue.core.dao.dto.ProfileDTO;
 
 public class RegistrationForm {
 
-  private Account account = new Account();
+  private AccountDTO account = new AccountDTO();
 
-  private Profile profile = new Profile();
+  private ProfileDTO profile = new ProfileDTO();
 
-  private ExpertInventation inventation = new ExpertInventation();
+  private ExpertInventationDTO inventation = new ExpertInventationDTO();
 
   @NotEmpty
   @Length(min=6, max=100)
@@ -27,27 +27,27 @@ public class RegistrationForm {
     this.fullName = fullName;
   }
 
-  public Account getAccount() {
+  public AccountDTO getAccount() {
     return account;
   }
 
-  public void setAccount(Account account) {
+  public void setAccount(AccountDTO account) {
     this.account = account;
   }
 
-  public Profile getProfile() {
+  public ProfileDTO getProfile() {
     return profile;
   }
 
-  public void setProfile(Profile profile) {
+  public void setProfile(ProfileDTO profile) {
     this.profile = profile;
   }
 
-  public ExpertInventation getInventation() {
+  public ExpertInventationDTO getInventation() {
     return inventation;
   }
 
-  public void setInventation(ExpertInventation inventation) {
+  public void setInventation(ExpertInventationDTO inventation) {
     this.inventation = inventation;
   }
 

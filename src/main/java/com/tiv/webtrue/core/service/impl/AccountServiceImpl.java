@@ -6,24 +6,24 @@ import org.springframework.stereotype.Service;
 
 import com.tiv.webtrue.core.dao.AbstractDao;
 import com.tiv.webtrue.core.dao.AccountDao;
-import com.tiv.webtrue.core.model.Account;
+import com.tiv.webtrue.core.dao.dto.AccountDTO;
 import com.tiv.webtrue.core.service.AccountService;
 
 @Service
-public class AccountServiceImpl extends AbstractServiceImpl<Account> implements AccountService {
+public class AccountServiceImpl extends AbstractServiceImpl<AccountDTO> implements AccountService {
   
   @Autowired
   private AccountDao dao;
 
   @Override
-  public Account getByEmail(String email) {
-    Account account = dao.findFirst(Restrictions.eq("email", email));
+  public AccountDTO getByEmail(String email) {
+    AccountDTO account = dao.findFirst(Restrictions.eq("email", email));
     return account;
   }
 
   @Override
-  AbstractDao<Account, Long> getDao() {
-    return (AbstractDao<Account, Long>)dao;
+  AbstractDao<AccountDTO, Long> getDao() {
+    return (AbstractDao<AccountDTO, Long>)dao;
   }
 
   

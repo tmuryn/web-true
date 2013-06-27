@@ -1,4 +1,4 @@
-package com.tiv.webtrue.core.model;
+package com.tiv.webtrue.core.dao.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity
-public class Account extends BaseModel {
+public class AccountDTO extends BaseModelDTO {
 
   @Email
   private String email;

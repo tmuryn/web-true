@@ -3,14 +3,14 @@ package com.tiv.webtrue.core.dao.impl;
 import org.springframework.stereotype.Repository;
 
 import com.tiv.webtrue.core.dao.AccountDao;
-import com.tiv.webtrue.core.model.Account;
+import com.tiv.webtrue.core.dao.dto.AccountDTO;
 
 
 @Repository
-public class AccountDaoImpl extends AbstractDaoImpl<Account, Long> implements AccountDao{
+public class AccountDaoImpl extends AbstractDaoImpl<AccountDTO, Long> implements AccountDao{
 
   public AccountDaoImpl() {
-    super(Account.class);
+    super(AccountDTO.class);
   }
 
 }

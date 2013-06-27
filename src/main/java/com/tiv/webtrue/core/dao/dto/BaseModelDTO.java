@@ -1,8 +1,8 @@
-package com.tiv.webtrue.core.model;
+package com.tiv.webtrue.core.dao.dto;
 
 
 
-public class BaseModel {
+public class BaseModelDTO {
 
   protected Long id;
   private String uid;
