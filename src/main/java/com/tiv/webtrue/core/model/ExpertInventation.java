@@ -8,6 +8,9 @@ import javax.persistence.Id;
 
 @Entity
 public class ExpertInventation extends BaseModel {
+  
+  
+  private String code;
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,5 +18,15 @@ public class ExpertInventation extends BaseModel {
   public Long getId() {
     return id;
   }
+
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
+  }
+  
+  
 
 }

@@ -63,7 +63,6 @@
 			<version>3.1.4.RELEASE</version>
 		</dependency>
 
-
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>

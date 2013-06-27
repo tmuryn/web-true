@@ -4,7 +4,7 @@
 
 
 <div class="thumbnail">
-	<form action="<c:url value='j_spring_security_check' />" method="post"
+	<form action="registration" method="post"
 		class="form-horizontal">
 		<fieldset>
 			<legend>Регистрация</legend>
@@ -34,7 +34,7 @@
 			<div class="control-group">
 				<label class="control-label" for="inputEmail">Електронный адрес</label>
 				<div class="controls">
-					<input class="input-xxlarge" type="text" id="inputEmail"
+					<input class="input-xxlarge" type="text" id="inputEmail" name="account.email"
 						placeholder="Корректный електронный адрес">
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 			<div class="control-group">
 				<label class="control-label" for="inputEmail">Пароль</label>
 				<div class="controls">
-					<input class="input-xxlarge" type="text" id="inputEmail"
+					<input class="input-xxlarge" type="text" id="inputEmail" name="account.password"
 						placeholder="от 6 до 12 символов">
 				</div>
 			</div>
@@ -52,7 +52,7 @@
 				<label class="control-label" for="inputEmail">Имя, Фамилия</label>
 				<div class="controls">
 					<input class="input-xxlarge" type="text" id="inputEmail"
-						placeholder="От 10 до 100 символов">
+						placeholder="От 10 до 100 символов" name="fullName">
 				</div>
 			</div>
 
@@ -60,7 +60,7 @@
 			<div class="control-group">
 				<label class="control-label" for="invantation">Приглашение експерта</label>
 				<div class="controls">
-					<input class="input-xxlarge" type="text" id="invantation"
+					<input class="input-xxlarge" type="text" id="invantation.code"
 						placeholder="Идентификационный номер приглашения">
 				</div>
 			</div>

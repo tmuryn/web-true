@@ -6,11 +6,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 @Entity
 public class Account extends BaseModel {
 
+  @Email
   private String email;
+  
+  @NotEmpty
+  @Length(min=6, max=12)
   private String password;
   private boolean external;
   
