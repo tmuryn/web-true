@@ -45,4 +45,9 @@
 
 	<task:annotation-driven />
 	
+	 <beans:bean id="messageSource"  
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
+        <beans:property name="basename" value="/WEB-INF/messages/messages" />  
+    </beans:bean>  
+	
 </beans:beans>

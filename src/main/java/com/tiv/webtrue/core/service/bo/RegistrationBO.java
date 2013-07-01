@@ -1,30 +1,15 @@
-package com.tiv.webtrue.web.controller;
-
-import javax.validation.constraints.AssertTrue;
-
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
-
-public class RegistrationForm {
+package com.tiv.webtrue.core.service.bo;
 
 
-  @NotEmpty
-  @Length(min=6, max=100)
+public class RegistrationBO {
+ 
   private String fullName;
   
-  @NotEmpty
-  @Email
   private String email;
   
-  @NotEmpty
-  @Length(min=6 , max=12)
   private String password;
   
   private String invitation;
-  
-  @AssertTrue
-  private boolean accept;
 
   public String getFullName() {
     return fullName;
@@ -57,17 +42,6 @@ public class RegistrationForm {
   public void setInvitation(String inventation) {
     this.invitation = inventation;
   }
-
-  public boolean isAccept() {
-    return accept;
-  }
-
-  public void setAccept(boolean accept) {
-    this.accept = accept;
-  }
   
   
-
-  
-
 }

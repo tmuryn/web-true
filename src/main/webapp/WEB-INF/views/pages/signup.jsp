@@ -63,11 +63,11 @@
 
 					
 			<div class="control-group">
-				<label class="control-label" for="invantation">Приглашение експерта</label>
+				<label class="control-label" for="invitation">Приглашение експерта</label>
 				<div class="controls">
-					<form:input class="input-xxlarge" type="text" path="inventation"
+					<form:input class="input-xxlarge" type="text" path="invitation"
 						placeholder="Идентификационный номер приглашения"/> <br>
-						<form:errors path="inventation" cssClass="alert-error alert input-xxlarge" element="div"></form:errors>
+						<form:errors path="invitation" cssClass="alert-error alert input-xxlarge" element="div"></form:errors>
 				</div>
 			</div>
 
@@ -78,8 +78,7 @@
 						Принимаю условия <a href="#">соглашения</a>
 						
 					</label>
-					<form:errors path="accept" cssClass="alert-error alert input-xxlarge" element="div">
-						<div class="alert-error alert input-xlarge">Вы должны принять условия</div></form:errors> <br>
+					<form:errors path="accept" cssClass="alert-error alert input-xlarge" element="div"></form:errors> <br>
 					<button type="submit" class="btn">Зарегистрировать</button>
 				</div>
 			</div>

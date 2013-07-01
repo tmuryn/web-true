@@ -21,6 +21,7 @@ public class AccountDTO extends BaseDTO {
   @Length(min=6, max=12)
   private String password;
   private boolean external;
+  private boolean activated;
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,6 +53,16 @@ public class AccountDTO extends BaseDTO {
   public void setExternal(boolean external) {
     this.external = external;
   }
+
+  public boolean isActivated() {
+    return activated;
+  }
+
+  public void setActivated(boolean activated) {
+    this.activated = activated;
+  }
+  
+  
 
 
 }

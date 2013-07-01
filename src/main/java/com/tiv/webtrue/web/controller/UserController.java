@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tiv.webtrue.core.service.ProfileService;
+import com.tiv.webtrue.core.service.bo.RegistrationBO;
+import com.tiv.webtrue.core.service.impl.AccountDuplicateException;
+import com.tiv.webtrue.core.service.impl.InvalidInvantationCode;
 
 @Controller
 public class UserController {
@@ -36,27 +39,35 @@ public class UserController {
     model.addAttribute("error", "true");
     return Views.LOGIN;
   }
-  
+
   @RequestMapping(value = Actions.REGISTRATION_INFORMATION, method = RequestMethod.GET)
   public String registrationInformation(ModelMap model) {
     return Views.REGISTRATION;
   }
 
   @RequestMapping(value = Actions.REGISTRATION, method = RequestMethod.POST)
-  public String registration(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult result, Model model) {
+  public String registration(@Valid @ModelAttribute RegistrationForm registrationForm,
+      BindingResult result, Model model) {
     if (result.hasErrors()) {
       return Views.SIGNUP;
     }
-    
-    
-    
-//  try {
-//      
-//      profileService.register(registrationForm.getAccount(),registrationForm.getProfile());
-//    } catch (AccountDuplicateException e) {
-//      model.addAttribute("duplicate", "true");
-//      return Views.SIGNUP;
-//    }
+
+    RegistrationBO bo = new RegistrationBO();
+    bo.setEmail(registrationForm.getEmail());
+    bo.setFullName(registrationForm.getFullName());
+    bo.setInvitation(registrationForm.getInvitation());
+    bo.setPassword(registrationForm.getPassword());
+
+    try {
+      profileService.register(bo);
+    } catch (AccountDuplicateException e) {
+      model.addAttribute("duplicate", "true");
+      result.rejectValue("email", "duplicate","Данный адрес используеться");
+      return Views.SIGNUP;
+    } catch (InvalidInvantationCode e) {
+      result.rejectValue("invitation", "invalid","Неверный номер приглашения");
+      return Views.SIGNUP;
+    }
 
     return "redirect:" + Actions.REGISTRATION_INFORMATION;
   }
@@ -64,7 +75,7 @@ public class UserController {
   @RequestMapping(value = Actions.SIGNUP, method = RequestMethod.GET)
   public String signup(ModelMap model) {
     RegistrationForm registrationForm = new RegistrationForm();
-    model.addAttribute("registrationForm", registrationForm);  
+    model.addAttribute("registrationForm", registrationForm);
     return Views.SIGNUP;
   }
 
