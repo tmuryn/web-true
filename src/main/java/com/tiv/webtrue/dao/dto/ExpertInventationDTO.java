@@ -1,4 +1,4 @@
-package com.tiv.webtrue.core.dao.dto;
+package com.tiv.webtrue.dao.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,10 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "Category")
-public class CategoryDTO extends BaseDTO {
-
-  private String categoryName;
+@Entity(name = "ExpertInventation")
+public class ExpertInventationDTO extends BaseDTO {
+  
+  
+  private String code;
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +19,14 @@ public class CategoryDTO extends BaseDTO {
     return id;
   }
 
-  public String getCategoryName() {
-    return categoryName;
+  public String getCode() {
+    return code;
   }
 
-  public void setCategoryName(String categoryName) {
-    this.categoryName = categoryName;
+  public void setCode(String code) {
+    this.code = code;
   }
+  
+  
+
 }

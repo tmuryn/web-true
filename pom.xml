@@ -12,6 +12,7 @@
 		<org.springframework-version>3.2.0.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.1</org.slf4j-version>
+        <dozer-version>5.4.0</dozer-version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -244,6 +245,11 @@
 			<version>1.3</version>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>${dozer-version}</version>
+        </dependency>
 
 	</dependencies>
 	<repositories>

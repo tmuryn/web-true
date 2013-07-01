@@ -3,9 +3,9 @@ package com.tiv.webtrue.web.controller;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.tiv.webtrue.core.dao.dto.AccountDTO;
-import com.tiv.webtrue.core.dao.dto.ExpertInventationDTO;
-import com.tiv.webtrue.core.dao.dto.ProfileDTO;
+import com.tiv.webtrue.dao.dto.AccountDTO;
+import com.tiv.webtrue.dao.dto.ExpertInventationDTO;
+import com.tiv.webtrue.dao.dto.ProfileDTO;
 
 public class RegistrationForm {
 

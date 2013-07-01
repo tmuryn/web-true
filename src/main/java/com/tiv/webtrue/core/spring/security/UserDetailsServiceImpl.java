@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.tiv.webtrue.core.dao.AccountRoleDao;
+import com.tiv.webtrue.dao.AccountRoleDao;
 import com.tiv.webtrue.core.service.AccountService;
 
 

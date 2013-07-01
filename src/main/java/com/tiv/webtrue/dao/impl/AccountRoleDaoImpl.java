@@ -1,9 +1,9 @@
-package com.tiv.webtrue.core.dao.impl;
+package com.tiv.webtrue.dao.impl;
 
 import org.springframework.stereotype.Repository;
 
-import com.tiv.webtrue.core.dao.AccountRoleDao;
-import com.tiv.webtrue.core.dao.dto.AccountRoleDTO;
+import com.tiv.webtrue.dao.AccountRoleDao;
+import com.tiv.webtrue.dao.dto.AccountRoleDTO;
 
 @Repository
 public class AccountRoleDaoImpl extends AbstractDaoImpl<AccountRoleDTO, Long> implements AccountRoleDao {

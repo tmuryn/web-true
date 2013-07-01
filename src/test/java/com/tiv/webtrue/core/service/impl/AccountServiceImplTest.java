@@ -3,7 +3,7 @@ package com.tiv.webtrue.core.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
-import com.tiv.webtrue.core.dao.dto.AccountDTO;
+import com.tiv.webtrue.dao.dto.AccountDTO;
 import com.tiv.webtrue.core.service.AbstractService;
 import com.tiv.webtrue.core.service.AccountService;
 

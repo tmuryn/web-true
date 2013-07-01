@@ -6,8 +6,8 @@ import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tiv.webtrue.core.dao.AbstractDao;
-import com.tiv.webtrue.core.dao.dto.BaseDTO;
+import com.tiv.webtrue.dao.AbstractDao;
+import com.tiv.webtrue.dao.dto.BaseDTO;
 import com.tiv.webtrue.core.service.AbstractService;
 
 @Service

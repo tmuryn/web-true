@@ -1,4 +1,4 @@
-package com.tiv.webtrue.core.dao;
+package com.tiv.webtrue.dao;
 
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;

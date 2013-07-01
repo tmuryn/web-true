@@ -14,8 +14,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 
-import com.tiv.webtrue.core.dao.dto.AccountDTO;
-import com.tiv.webtrue.core.dao.dto.BaseDTO;
+import com.tiv.webtrue.dao.dto.AccountDTO;
+import com.tiv.webtrue.dao.dto.BaseDTO;
 import com.tiv.webtrue.core.service.AbstractService;
 
 public abstract class AbstractServiceTest<T extends BaseDTO>
