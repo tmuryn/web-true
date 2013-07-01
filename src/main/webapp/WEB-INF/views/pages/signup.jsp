@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
 
 
 <div class="thumbnail">
-	<form action="registration" method="post"
-		class="form-horizontal">
+
+	<form:form method="post" action="registration"  modelAttribute="registrationForm" class="form-horizontal">  
+	
 		<fieldset>
 			<legend>Регистрация</legend>
 
@@ -34,25 +36,28 @@
 			<div class="control-group">
 				<label class="control-label" for="inputEmail">Електронный адрес</label>
 				<div class="controls">
-					<input class="input-xxlarge" type="text" id="inputEmail" name="account.email"
-						placeholder="Корректный електронный адрес">
+					<form:input  class="input-xxlarge" type="text" id="inputEmail" path="email"
+						placeholder="Корректный електронный адрес"/>
+						<form:errors path="email" cssClass="alert-error alert input-xlarge" element="div"></form:errors>
 				</div>
 			</div>
 			
 			<div class="control-group">
 				<label class="control-label" for="inputEmail">Пароль</label>
 				<div class="controls">
-					<input class="input-xxlarge" type="text" id="inputEmail" name="account.password"
-						placeholder="от 6 до 12 символов">
+					<form:input  class="input-xxlarge" type="password" id="inputPassword" path="password"
+						placeholder="от 6 до 12 символов"/>
+						<form:errors path="password" cssClass="alert-error alert input-xlarge" element="div"></form:errors>
 				</div>
 			</div>
 			
 
 			<div class="control-group">
-				<label class="control-label" for="inputEmail">Имя, Фамилия</label>
+				<label class="control-label" for="inputName">Имя, Фамилия</label>
 				<div class="controls">
-					<input class="input-xxlarge" type="text" id="inputEmail"
-						placeholder="От 10 до 100 символов" name="fullName">
+					<form:input  path="fullName" class="input-xxlarge" id="inputName"
+						placeholder="От 10 до 100 символов"/>
+					<form:errors path="fullName" cssClass="alert-error alert input-xlarge" element="div"></form:errors>
 				</div>
 			</div>
 
@@ -60,22 +65,26 @@
 			<div class="control-group">
 				<label class="control-label" for="invantation">Приглашение експерта</label>
 				<div class="controls">
-					<input class="input-xxlarge" type="text" id="invantation.code"
-						placeholder="Идентификационный номер приглашения">
+					<form:input class="input-xxlarge" type="text" path="inventation"
+						placeholder="Идентификационный номер приглашения"/> <br>
+						<form:errors path="inventation" cssClass="alert-error alert input-xxlarge" element="div"></form:errors>
 				</div>
 			</div>
 
 
 			<div class="control-group">
 				<div class="controls">
-					<label class="checkbox"> <input type="checkbox">
+					<label class="checkbox"> <form:checkbox path="accept"/>
 						Принимаю условия <a href="#">соглашения</a>
-					</label> <br>
+						
+					</label>
+					<form:errors path="accept" cssClass="alert-error alert input-xxlarge" element="div">
+						<div class="alert-error alert input-xlarge">Вы должны принять условия</div></form:errors> <br>
 					<button type="submit" class="btn">Зарегистрировать</button>
 				</div>
 			</div>
-	</form>
-
+		</fieldset>
+	</form:form>
 
 
 

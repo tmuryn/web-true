@@ -1,5 +1,7 @@
 package com.tiv.webtrue.web.controller;
 
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.tiv.webtrue.core.dao.dto.AccountDTO;
 import com.tiv.webtrue.core.service.ProfileService;
 import com.tiv.webtrue.core.service.impl.AccountDuplicateException;
 
@@ -37,26 +40,35 @@ public class UserController {
     model.addAttribute("error", "true");
     return Views.LOGIN;
   }
+  
+  @RequestMapping(value = Actions.REGISTRATION_INFORMATION, method = RequestMethod.GET)
+  public String registrationInformation(ModelMap model) {
+    return Views.REGISTRATION;
+  }
 
   @RequestMapping(value = Actions.REGISTRATION, method = RequestMethod.POST)
-  public String registration(@Valid @ModelAttribute RegistrationForm form, BindingResult result, Model model) {
-    
+  public String registration(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult result, Model model) {
     if (result.hasErrors()) {
       return Views.SIGNUP;
     }
     
-    try {
-      profileService.register(form.getAccount(),form.getProfile());
-    } catch (AccountDuplicateException e) {
-      model.addAttribute("duplicate", "true");
-      return Views.SIGNUP;
-    }
+    
+    
+//  try {
+//      
+//      profileService.register(registrationForm.getAccount(),registrationForm.getProfile());
+//    } catch (AccountDuplicateException e) {
+//      model.addAttribute("duplicate", "true");
+//      return Views.SIGNUP;
+//    }
 
-    return "redirect:" + Views.REGISTRATION;
+    return "redirect:" + Actions.REGISTRATION_INFORMATION;
   }
 
   @RequestMapping(value = Actions.SIGNUP, method = RequestMethod.GET)
-  public String signup() {
+  public String signup(ModelMap model) {
+    RegistrationForm registrationForm = new RegistrationForm();
+    model.addAttribute("registrationForm", registrationForm);  
     return Views.SIGNUP;
   }
 
@@ -65,6 +77,7 @@ public class UserController {
     public static final String LOGIN = "/login";
     public static final String SIGNUP = "/signup";
     public static final String REGISTRATION = "/registration";
+    public static final String REGISTRATION_INFORMATION = "/registrationinfo";
   }
 
   public interface Views {

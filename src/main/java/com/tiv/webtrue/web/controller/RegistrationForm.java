@@ -1,23 +1,31 @@
 package com.tiv.webtrue.web.controller;
 
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.tiv.webtrue.core.dao.dto.AccountDTO;
-import com.tiv.webtrue.core.dao.dto.ExpertInventationDTO;
-import com.tiv.webtrue.core.dao.dto.ProfileDTO;
-
 public class RegistrationForm {
 
-  private AccountDTO account = new AccountDTO();
-
-  private ProfileDTO profile = new ProfileDTO();
-
-  private ExpertInventationDTO inventation = new ExpertInventationDTO();
 
   @NotEmpty
   @Length(min=6, max=100)
   private String fullName;
+  
+  @NotEmpty
+  @Email
+  private String email;
+  
+  @NotEmpty
+  @Length(min=6 , max=12)
+  private String password;
+  
+  private String inventation;
+  
+  @AssertTrue
+  private boolean accept;
 
   public String getFullName() {
     return fullName;
@@ -27,30 +35,40 @@ public class RegistrationForm {
     this.fullName = fullName;
   }
 
-  public AccountDTO getAccount() {
-    return account;
+  public String getEmail() {
+    return email;
   }
 
-  public void setAccount(AccountDTO account) {
-    this.account = account;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
-  public ProfileDTO getProfile() {
-    return profile;
+  public String getPassword() {
+    return password;
   }
 
-  public void setProfile(ProfileDTO profile) {
-    this.profile = profile;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
-  public ExpertInventationDTO getInventation() {
+  public String getInventation() {
     return inventation;
   }
 
-  public void setInventation(ExpertInventationDTO inventation) {
+  public void setInventation(String inventation) {
     this.inventation = inventation;
   }
 
+  public boolean isAccept() {
+    return accept;
+  }
 
+  public void setAccept(boolean accept) {
+    this.accept = accept;
+  }
+  
+  
+
+  
 
 }
