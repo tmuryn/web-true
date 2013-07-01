@@ -1,7 +1,7 @@
-package com.tiv.webtrue.core.dao.impl;
+package com.tiv.webtrue.dao.impl;
 
-import com.tiv.webtrue.core.dao.CategoryDao;
-import com.tiv.webtrue.core.dao.dto.CategoryDTO;
+import com.tiv.webtrue.dao.CategoryDao;
+import com.tiv.webtrue.dao.dto.CategoryDTO;
 
 import org.springframework.stereotype.Repository;
 

@@ -26,7 +26,6 @@ public final class ArticlesController extends NavigationController {
   
   @RequestMapping(value = Actions.ARTICLES, method = RequestMethod.POST)
   public String token(@RequestParam String token) throws IOException {
-    System.out.println(""+token);
     action(HomeController.Views.HOME,HomeController.Actions.HOME);
     return Views.ARTICLES;
   }

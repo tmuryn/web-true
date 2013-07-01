@@ -38,7 +38,15 @@
 		<property name="ignoreResourceNotFound" value="true" />
 		<!-- <property name="ignoreUnresolvablePlaceholders" value="false" /> -->
 	</bean>
-
+    <bean id="org.dozer.Mapper" class="org.dozer.DozerBeanMapper">
+        <!--<property name="mappingFiles">-->
+            <!--<list>-->
+                <!--<value>dozer-global-configuration.xml</value>-->
+                <!--<value>dozer-bean-mappings.xml</value>-->
+                <!--<value>more-dozer-bean-mappings.xml</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    </bean>
 	<!-- Database Configuration -->
 	<import resource="database/DataSource.xml" />
 	<import resource="database/Hibernate.xml" />

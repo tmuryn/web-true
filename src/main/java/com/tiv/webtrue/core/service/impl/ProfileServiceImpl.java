@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tiv.webtrue.core.dao.AbstractDao;
-import com.tiv.webtrue.core.dao.ProfileDao;
-import com.tiv.webtrue.core.dao.dto.AccountDTO;
-import com.tiv.webtrue.core.dao.dto.ProfileDTO;
+import com.tiv.webtrue.dao.AbstractDao;
+import com.tiv.webtrue.dao.ProfileDao;
+import com.tiv.webtrue.dao.dto.AccountDTO;
+import com.tiv.webtrue.dao.dto.ProfileDTO;
 import com.tiv.webtrue.core.service.AccountService;
 import com.tiv.webtrue.core.service.ProfileService;
 

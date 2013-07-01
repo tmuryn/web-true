@@ -1,4 +1,4 @@
-package com.tiv.webtrue.core.dao.dto;
+package com.tiv.webtrue.dao.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

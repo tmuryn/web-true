@@ -1,9 +1,9 @@
-package com.tiv.webtrue.core.dao.impl;
+package com.tiv.webtrue.dao.impl;
 
 import org.springframework.stereotype.Repository;
 
-import com.tiv.webtrue.core.dao.AccountDao;
-import com.tiv.webtrue.core.dao.dto.AccountDTO;
+import com.tiv.webtrue.dao.AccountDao;
+import com.tiv.webtrue.dao.dto.AccountDTO;
 
 
 @Repository

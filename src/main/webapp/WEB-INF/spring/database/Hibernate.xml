@@ -11,7 +11,7 @@
 		<property name="dataSource">
 			<ref bean="dataSource" />
 		</property>
-		<property name="packagesToScan" value="com.tiv.webtrue.core.dao.dto" />
+		<property name="packagesToScan" value="com.tiv.webtrue.dao.dto" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

@@ -1,4 +1,4 @@
-package com.tiv.webtrue.core.dao.impl;
+package com.tiv.webtrue.dao.impl;
 
 
 import java.io.Serializable;
@@ -13,7 +13,7 @@ import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tiv.webtrue.core.dao.AbstractDao;
+import com.tiv.webtrue.dao.AbstractDao;
 
 @Transactional
 public abstract class AbstractDaoImpl<E, I extends Serializable> implements AbstractDao<E, I> {

@@ -1,7 +1,5 @@
 package com.tiv.webtrue.web.controller;
 
-import java.util.Map;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tiv.webtrue.core.dao.dto.AccountDTO;
 import com.tiv.webtrue.core.service.ProfileService;
-import com.tiv.webtrue.core.service.impl.AccountDuplicateException;
 
 @Controller
 public class UserController {
