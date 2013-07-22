@@ -5,8 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.DynamicAttributes;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
@@ -29,25 +31,37 @@ public class ActionTag extends SimpleTagSupport implements DynamicAttributes {
     @SuppressWarnings("unchecked")
     HashMap<String, String> hashMap =
         (HashMap<String, String>) getJspContext().findAttribute(NavigationController.ACTIONS);
+
+    String url = null;
+
     if (hashMap != null) {
       Set<Map.Entry<String, String>> entries = map.entrySet();
-      String url = hashMap.get(action);
+      url = hashMap.get(action);
 
       if (url != null) {
 
         for (Map.Entry<String, String> entry : entries) {
           url = url.replaceAll("\\{" + entry.getKey() + "\\}", entry.getValue());
         }
+        
+        url = getHttpServletRequest().getContextPath() + url;
 
       } else {
-        url = "Invalid Url. Please specify correct url for action : " + action;
+        url = getHttpServletRequest().getContextPath() + "/" + action;
       }
 
-      JspWriter out = getJspContext().getOut();
-      out.println(url);
+    } else {
+      url = getHttpServletRequest().getContextPath() + "/" + action;
     }
 
+    JspWriter out = getJspContext().getOut();
+    out.println(url);
+
     super.doTag();
+  }
+
+  private HttpServletRequest getHttpServletRequest() {
+    return (HttpServletRequest) ((PageContext) getJspContext()).getRequest();
   }
 
   @Override

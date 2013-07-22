@@ -11,5 +11,7 @@ public class AccountRoleDaoImpl extends AbstractDaoImpl<AccountRoleDTO, Long> im
   protected AccountRoleDaoImpl() {
     super(AccountRoleDTO.class);
   }
+  
+  
 
 }

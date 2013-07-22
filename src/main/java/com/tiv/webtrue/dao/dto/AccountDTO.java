@@ -1,5 +1,7 @@
 package com.tiv.webtrue.dao.dto;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,8 @@ public class AccountDTO extends BaseDTO {
   private String password;
   private boolean external;
   private boolean activated;
+  private String activationCode;
+  private Date creationDate;
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,6 +64,22 @@ public class AccountDTO extends BaseDTO {
 
   public void setActivated(boolean activated) {
     this.activated = activated;
+  }
+
+  public String getActivationCode() {
+    return activationCode;
+  }
+
+  public void setActivationCode(String activationCode) {
+    this.activationCode = activationCode;
+  }
+
+  public Date getCreationDate() {
+    return creationDate;
+  }
+
+  public void setCreationDate(Date creationDate) {
+    this.creationDate = creationDate;
   }
   
   

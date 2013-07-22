@@ -3,15 +3,21 @@
 
 <div class="row-fluid">
 	<div class="span9">
+
 		<ul class="nav nav-pills">
+			<sec:authorize access="hasAnyRole('ADMIN','EXPERT')">
+			<li><a href="#">Мои</a></li>
+			</sec:authorize>
 			<li class="active"><a href="#">Новые</a></li>
 			<li><a href="#">Популярные</a></li>
-			<li><a href="#"></a></li>
+			
 		</ul>
 	</div>
 	<div class="span3">
+		<sec:authorize access="hasAnyRole('ADMIN','EXPERT')">
 		<button type="button" class="btn btn-primary pull-right">Добавить
 			статью</button>
+			</sec:authorize>
 	</div>
 </div>
 

@@ -7,10 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity(name = "ExpertInventation")
-public class ExpertInventationDTO extends BaseDTO {
+public class InventationDTO extends BaseDTO {
   
   
   private String code;
+  
+  private String email;
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +27,14 @@ public class ExpertInventationDTO extends BaseDTO {
 
   public void setCode(String code) {
     this.code = code;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
   
   

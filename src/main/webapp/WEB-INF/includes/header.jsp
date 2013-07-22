@@ -4,6 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="wt" uri="/WEB-INF/tld/action.tld"%>
 <%@ page session="false"%>
 <%
@@ -23,19 +25,20 @@
 <meta name="author" content="">
 
 <!-- Le styles -->
-<link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="<%=path%>/resources/bootstrap/css/bootstrap.css"
+	rel="stylesheet">
 <style type="text/css">
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
 }
 </style>
-<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="<%=path%>/resources/bootstrap/css/bootstrap-responsive.css"
+	rel="stylesheet">
 
 </head>
 
 <body>
-
 
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
@@ -43,28 +46,46 @@ body {
 				<a data-target=".navbar-responsive-collapse" data-toggle="collapse"
 					class="btn btn-navbar"> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a> <a href="home" class="brand">Колаборатор</a>
+				</a> <a href="<wt:action action="home" />" class="brand">Колаборатор</a>
 				<div class="nav-collapse collapse navbar-responsive-collapse">
 
 					<form action="" class="navbar-search pull-left">
 						<input type="text"
 							placeholder="Введите искомое, идентификатор статьи или вопроса"
-							class="search-query span6">
+							class="search-query span4">
 					</form>
 
-					<ul class="nav">
-
-					</ul>
 
 					<ul class="nav pull-right">
 
 
 						<li class="dropdown"><a data-toggle="dropdown"
 							class="dropdown-toggle" href="#"><i
-								class="icon-user icon-white"></i> Профиль <b class="caret"></b></a>
+								class="icon-user icon-white"></i> <sec:authorize var="loggedIn"
+									access="isAuthenticated()" /> <c:choose>
+									<c:when test="${loggedIn}">
+										<%=request.getUserPrincipal().getName()%>
+									</c:when>
+									<c:otherwise>
+       								Профиль
+   									 </c:otherwise>
+								</c:choose> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="signin">Войти</a></li>
-								<li><a href="signup">Регистрация</a></li>
+								<sec:authorize var="loggedIn" access="isAuthenticated()" />
+								<c:choose>
+									<c:when test="${loggedIn}">
+										<li><a href="<wt:action action="logout" />">Выход</a></li>
+										<li><a href="<wt:action action="invate" />">Редактировать профайл</a></li>
+									</c:when>
+									<c:otherwise>
+										<li><a href="<wt:action action="signin" />">Войти</a></li>
+										<li><a href="<wt:action action="signup" />">Регистрация</a></li>
+									</c:otherwise>
+								</c:choose>
+
+								<sec:authorize access="hasAnyRole('ADMIN','EXPERT')">
+									<li><a href="<wt:action action="newinvite" />">Пригласить експерта</a></li>
+								</sec:authorize>
 
 							</ul></li>
 
@@ -98,7 +119,7 @@ body {
 			<div class="span10">
 
 				<ul class="nav nav-tabs">
-					<li class="active1"><a href="#">Статьи</a></li>
+					<li class="active"><a href="#">Статьи</a></li>
 					<li><a href="#">Теги</a></li>
 					<li><a href="questions-answers.html">Вопросы/Рекомендации</a></li>
 					<li><a href="ask-question.html">Задать вопрос</a></li>

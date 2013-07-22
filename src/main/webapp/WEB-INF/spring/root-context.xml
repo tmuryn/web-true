@@ -33,6 +33,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:/database.properties</value>
+				<value>classpath:/messages.properties</value>
 			</list>
 		</property>
 		<property name="ignoreResourceNotFound" value="true" />
@@ -50,8 +51,7 @@
 	<!-- Database Configuration -->
 	<import resource="database/DataSource.xml" />
 	<import resource="database/Hibernate.xml" />
-
-	
 	<import resource="spring-security.xml" />
+	<import resource="email.xml" />
 
 </beans>

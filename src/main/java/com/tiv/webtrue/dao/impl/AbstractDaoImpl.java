@@ -47,7 +47,12 @@ public abstract class AbstractDaoImpl<E, I extends Serializable> implements Abst
 
 
   public void delete(I e) {
-    Object object = find(e);
+    E object = find(e);
+    delete(object);
+  }
+
+
+  public void delete(E object) {
     getCurrentSession().delete(object);
   }
 

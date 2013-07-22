@@ -1,7 +1,8 @@
 package com.tiv.webtrue.core.service.bo;
 
 
-public class RegistrationBO {
+
+public class UserBO {
  
   private String fullName;
   
@@ -10,6 +11,12 @@ public class RegistrationBO {
   private String password;
   
   private String invitation;
+  
+  private String activationUrl;
+  
+  private String activationCode;
+  
+  private Long profileId;
 
   public String getFullName() {
     return fullName;
@@ -42,6 +49,32 @@ public class RegistrationBO {
   public void setInvitation(String inventation) {
     this.invitation = inventation;
   }
+
+  public String getActivationUrl() {
+    return activationUrl;
+  }
+
+  public void setActivationUrl(String activationUrl) {
+    this.activationUrl = activationUrl;
+  }
+
+  public String getActivationCode() {
+    return activationCode;
+  }
+
+  public void setActivationCode(String activationCode) {
+    this.activationCode = activationCode;
+  }
+
+  public Long getProfileId() {
+    return profileId;
+  }
+
+  public void setProfileId(Long profileId) {
+    this.profileId = profileId;
+  }
+
+  
   
   
 }

@@ -1,5 +1,6 @@
 package com.tiv.webtrue.web.controller;
 
+import org.dozer.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,10 @@ public class NavigationController {
 
   @Autowired
   private HttpServletRequest request;
+  
+  @Autowired
+  protected Mapper mapper;
+
   /**
    * Slf4j logger.
    */
@@ -39,7 +44,7 @@ public class NavigationController {
     if (actions == null) {
       actions = new HashMap<String, String>();
     }
-    actions.put(action,"/web-true-social"+link);
+    actions.put(action,link);
     r.setAttribute(ACTIONS, actions);
   }
 

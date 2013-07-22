@@ -11,6 +11,7 @@ public interface AbstractDao<E, I extends Serializable> {
     E find(I id);
     void save(E e);
     void delete(I e);
+    void delete(E e);
     List<E> getAll();
     List<E> find(Criterion criterion);
     List<E> find(Criterion criterion,Order order,int firstResult,int maximumResults);
