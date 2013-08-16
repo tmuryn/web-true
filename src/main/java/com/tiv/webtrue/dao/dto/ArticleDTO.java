@@ -9,10 +9,14 @@ import javax.persistence.Id;
 
 @Entity(name = "Article")
 public class ArticleDTO extends BaseDTO {
-  
+
   private String title;
   private String content;
-  private String expertId;
+  private Long accountId;
+  private Long viewsCount;
+  private Long commentsCount;
+  private Long likesCount;
+  private Long dislikeCount;
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,12 +41,44 @@ public class ArticleDTO extends BaseDTO {
     this.content = content;
   }
 
-  public String getExpertId() {
-    return expertId;
+  public Long getAccountId() {
+    return accountId;
   }
 
-  public void setExpertId(String expertId) {
-    this.expertId = expertId;
+  public void setAccountId(Long accountId) {
+    this.accountId = accountId;
+  }
+
+  public Long getViewsCount() {
+    return viewsCount;
+  }
+
+  public void setViewsCount(Long viewsCount) {
+    this.viewsCount = viewsCount;
+  }
+
+  public Long getCommentsCount() {
+    return commentsCount;
+  }
+
+  public void setCommentsCount(Long commentsCount) {
+    this.commentsCount = commentsCount;
+  }
+
+  public Long getLikesCount() {
+    return likesCount;
+  }
+
+  public void setLikesCount(Long likesCount) {
+    this.likesCount = likesCount;
+  }
+
+  public Long getDislikeCount() {
+    return dislikeCount;
+  }
+
+  public void setDislikeCount(Long dislikeCount) {
+    this.dislikeCount = dislikeCount;
   }
 
 

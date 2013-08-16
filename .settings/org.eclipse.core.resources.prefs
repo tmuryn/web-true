@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/tiv/webtrue/core/service/impl/ProfileServiceImpl.java=UTF-8
+encoding//src/main/java/com/tiv/webtrue/web/controller/UserController.java=UTF-8
+encoding//src/main/resources/messages.properties=UTF-8
+encoding//src/main/resources/templates/email/invite.vm=UTF-8
+encoding//src/main/resources/templates/email/invited.vm=UTF-8
+encoding//src/main/resources/templates/email/registered.vm=UTF-8

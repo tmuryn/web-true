@@ -3,10 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<div class="thumbnail">
+<p>
+<div class="panel panel-info">
+			<div class="panel-heading"><h3 class="panel-title">Вход</h3></div>
 	<form action="<c:url value='j_spring_security_check' />" method="post">
-		<fieldset>
-			<legend>Вход</legend>
+		
+			
 
 
 			<c:if test="${not empty error}">
@@ -14,29 +16,38 @@
 					Неверный email или пароль
 				</div>
 			</c:if>
-
-			<input type="text" name='j_username'
-				placeholder="Введите email..."> </label> <br> <input
-				type="password" name='j_password' placeholder="Введите пароль...">
-			</label> <br>
-			<button type="submit" class="btn">Войти</button>
-		</fieldset>
+			
+			<div class="form-group">
+			 
+			<input type="text" name='j_username' class="form-control"
+				placeholder="Введите email..."> 
+				</div>
+				
+				<div class="form-group"> 
+				 <input
+				type="password" name='j_password' placeholder="Введите пароль..." class="form-control">
+			</label> 
+			</div>
+			<button type="submit" class="btn btn-default">Войти</button>
+			
+			
 	</form>
 
-
+	<br/>
 	Также Вы можете войти используя: </br>
 	<br> <a
 		href="https://loginza.ru/api/widget?token_url=http://localhost:8080/web-true-social/articles&provider=google"
-		class="btn" alt="Google"><img
+		class="btn btn-default" alt="Google"><img
 		src="http://loginza.ru/img/providers/google.png"></a> <a
 		href="https://loginza.ru/api/widget?token_url=http://localhost:8080/web-true-social/articles&provider=facebook"
-		class="btn" alt="Facebook"><img
+		class="btn btn-default" alt="Facebook"><img
 		src="http://loginza.ru/img/providers/facebook.png"></a> <a
 		href="https://loginza.ru/api/widget?token_url=http://localhost:8080/web-true-social/articles&provider=mailru"
-		class="btn"><img src="http://loginza.ru/img/providers/mailru.png"
+		class="btn btn-default"><img src="http://loginza.ru/img/providers/mailru.png"
 		alt="Mail.ru"></a> <br>
 	<br>
 
 
 
 </div>
+</p>

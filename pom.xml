@@ -278,7 +278,11 @@
 			<artifactId>dozer</artifactId>
 			<version>${dozer-version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.ckeditor</groupId>
+			<artifactId>ckeditor-java-core</artifactId>
+			<version>3.5.3</version>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<!-- For testing against latest Spring snapshots -->

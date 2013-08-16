@@ -27,14 +27,16 @@
 <!-- Le styles -->
 <link href="<%=path%>/resources/bootstrap/css/bootstrap.css"
 	rel="stylesheet">
+<link href="<%=path%>/resources/bootstrap/css/bootstrap-glyphicons.css"
+	rel="stylesheet">
+
+
 <style type="text/css">
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
 }
 </style>
-<link href="<%=path%>/resources/bootstrap/css/bootstrap-responsive.css"
-	rel="stylesheet">
 
 </head>
 
@@ -43,26 +45,32 @@ body {
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a data-target=".navbar-responsive-collapse" data-toggle="collapse"
-					class="btn btn-navbar"> <span class="icon-bar"></span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a> <a href="<wt:action action="home" />" class="brand">Колаборатор</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-responsive-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				</a> <a href="<wt:action action="home" />" class="navbar-brand">Колаборатор</a>
 				<div class="nav-collapse collapse navbar-responsive-collapse">
 
-					<form action="" class="navbar-search pull-left">
+					<form action="" class="navbar-form pull-left col-lg-5">
 						<input type="text"
 							placeholder="Введите искомое, идентификатор статьи или вопроса"
-							class="search-query span4">
+							class="form-control">
 					</form>
 
 
-					<ul class="nav pull-right">
 
+
+					<ul class="nav navbar-nav pull-right">
+
+
+						<li ><a href="#" class="glyphicon glyphicon-plus icon-white"> Добавить вопрос</a></li>
 
 						<li class="dropdown"><a data-toggle="dropdown"
 							class="dropdown-toggle" href="#"><i
-								class="icon-user icon-white"></i> <sec:authorize var="loggedIn"
-									access="isAuthenticated()" /> <c:choose>
+								class="glyphicon glyphicon-user icon-white"></i> <sec:authorize
+									var="loggedIn" access="isAuthenticated()" /> <c:choose>
 									<c:when test="${loggedIn}">
 										<%=request.getUserPrincipal().getName()%>
 									</c:when>
@@ -75,7 +83,8 @@ body {
 								<c:choose>
 									<c:when test="${loggedIn}">
 										<li><a href="<wt:action action="logout" />">Выход</a></li>
-										<li><a href="<wt:action action="invate" />">Редактировать профайл</a></li>
+										<li><a href="<wt:action action="invate" />">Редактировать
+												профайл</a></li>
 									</c:when>
 									<c:otherwise>
 										<li><a href="<wt:action action="signin" />">Войти</a></li>
@@ -84,15 +93,16 @@ body {
 								</c:choose>
 
 								<sec:authorize access="hasAnyRole('ADMIN','EXPERT')">
-									<li><a href="<wt:action action="newinvite" />">Пригласить експерта</a></li>
+									<li><a href="<wt:action action="newinvite" />">Пригласить
+											експерта</a></li>
 								</sec:authorize>
 
 							</ul></li>
 
 						<li class="dropdown"><a data-toggle="dropdown"
 							class="dropdown-toggle" href="#"><i
-								class="icon-info-sign icon-white"></i> Информация <b
-								class="caret"></b></a>
+								class="glyphicon glyphicon-info-sign icon-white"></i> Информация
+								<b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Рейтинг Активности</a></li>
 								<li><a href="#">Общие вопросы по проекту</a></li>
@@ -102,8 +112,6 @@ body {
 								<li><a href="#">Контакты</a></li>
 
 							</ul></li>
-
-
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->
@@ -115,12 +123,12 @@ body {
 
 	<div class="container">
 
-		<div class="row-fluid">
-			<div class="span10">
+		<div class="row show-grid">
 
-				<ul class="nav nav-tabs">
-					<li class="active"><a href="#">Статьи</a></li>
+			<div class="col-lg-9">
+
+				<ul class="nav nav-pills">
+					<li class="<c:if test="${not empty articles}">active</c:if>"><a href="<wt:action action="article/list" apiId="${api.id}" />">Статьи</a></li>
 					<li><a href="#">Теги</a></li>
-					<li><a href="questions-answers.html">Вопросы/Рекомендации</a></li>
-					<li><a href="ask-question.html">Задать вопрос</a></li>
+					<li><a href="questions-answers.html">Вопросы</a></li>
 				</ul>

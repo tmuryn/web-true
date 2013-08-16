@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="wt" uri="/WEB-INF/tld/action.tld"%>
+<%
+  final String path = request.getContextPath();
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,16 +17,14 @@
 <meta name="author" content="">
 
 <!-- Le styles -->
-<link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="<%=path%>/resources/bootstrap/css/bootstrap.css"
+	rel="stylesheet" />
 <style type="text/css">
 body {
-	padding-top: 60px;
-	padding-bottom: 40px;
+	padding-top: 20px;
+	padding-bottom: 10px;
 }
 </style>
-<link href="resources/bootstrap/css/bootstrap-responsive.css"
-	rel="stylesheet">
-
 </head>
 
 <body>
@@ -31,7 +32,7 @@ body {
 
 	<div class="container">
 
-		<div class="hero-unit">
+		<div class="jumbotron">
 			<h1>Колаборатор</h1>
 			<p>Ресурс который помогает найти достоверную информацию</p>
 			<p>
@@ -43,59 +44,59 @@ body {
 
 
 
-		<div class="row-fluid">
-			<ul class="thumbnails">
-				<li class="span6">
-					<div class="thumbnail">
-						<img alt="300x200" data-src="holder.js/300x200"
-							style="width: 400px; height: 250px;"
-							src="resources/images/User_Experience3_650x370.jpg">
-						<div class="caption">
-							<h3>Пользователь</h3>
-							<p>
-								Пользователь может задать вопрос о любых вещах, явлениях,
-								ситуациях. Может получить рекомендацию у експерта касательно
-								своих проблем. <br> <br>
-							</p>
-							<p>
-								<a class="btn btn-primary" href="ask-question.html">Задать
-									вопрос</a>
-							</p>
-						</div>
+		<div class="row">
+
+			<div class="col-lg-6">
+				<div class="thumbnail">
+					<img alt="300x200" data-src="holder.js/300x200"
+						style="width: 400px; height: 250px;"
+						src="resources/images/User_Experience3_650x370.jpg">
+					<div class="caption">
+						<h3>Пользователь</h3>
+						<p>
+							Пользователь может задать вопрос о любых вещах, явлениях,
+							ситуациях. Может получить рекомендацию у експерта касательно
+							своих проблем. <br> <br>
+						</p>
+						<p>
+							<a class="btn btn-primary" href="ask-question.html">Задать
+								вопрос</a>
+						</p>
 					</div>
-				</li>
-				<li class="span6">
+
+				</div>
+				</div>
+				<div class="col-lg-6">
 					<div class="thumbnail">
 						<img alt="300x200" data-src="holder.js/400x250"
 							style="width: 400px; height: 250px;"
 							src="resources/images/finance_specialists.jpg">
 						<div class="caption">
 							<h3>Експерт</h3>
-							<p>Експерт - человек ведущий научную деятельность или
-								имеющий практику. Основная цель написание статей и получение
-								рейтинга активности. Возможность отвечать на вопросы
-								пользователей.</p>
+							<p>Експерт - человек ведущий научную деятельность или имеющий
+								практику. Основная цель написание статей и получение рейтинга
+								активности. Возможность отвечать на вопросы пользователей.</p>
 							<p>
 								<a class="btn btn-primary" href="signup">Регистрация</a> <a
 									class="btn btn-info" href="#">Рейтинг активности</a>
 							</p>
 						</div>
 					</div>
-				</li>
-				
-			</ul>
+				</div>
+
+
+			</div>
+
+			<hr>
+
+			<footer>
+				<p>&copy; Company 2013</p>
+			</footer>
+
 		</div>
-
-		<hr>
-
-		<footer>
-			<p>&copy; Company 2013</p>
-		</footer>
-
-	</div>
-	<!-- /container -->
+		<!-- /container -->
 
 
-
+		<%-- <script src="<%=path%>/resources/bootstrap/js/bootstrap.js"></script> --%>
 </body>
 </html>

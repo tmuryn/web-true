@@ -35,49 +35,50 @@ public class UserController extends NavigationController {
 
   @Autowired
   private HttpServletRequest request;
-  
+
   @Autowired
   private DaoAuthenticationProvider authenticationProvider;
-  
+
   private Logger logger = Logger.getLogger(UserController.class);
 
   @RequestMapping(value = Actions.SIGNIN, method = RequestMethod.GET)
-  public String signin() {
+  public String signin(ModelMap map) {
+    map.addAttribute("articles", true);
+    map.addAttribute("articlesmy", true);
     return ArticlesController.Views.ARTICLES;
   }
-
 
   @RequestMapping(value = Actions.LOGIN, method = RequestMethod.GET)
   public String login() {
     return Views.LOGIN;
   }
 
-
   @RequestMapping(value = "/loginfailed", method = RequestMethod.GET)
   public String loginerror(ModelMap model) {
     model.addAttribute("error", "true");
     return Views.LOGIN;
   }
-  
-  
+
+
   @RequestMapping(value = "/denied", method = RequestMethod.GET)
   public String denied() {
     return Views.DENIED;
   }
-  
-  
-  
+
+
+
   @RequestMapping(value = "/invite", method = RequestMethod.POST)
-  public String invite(@Valid @ModelAttribute InventationForm form, BindingResult result, Model model) {
+  public String invite(@Valid @ModelAttribute InventationForm form, BindingResult result,
+      Model model) {
     if (result.hasErrors()) {
       return Views.INVENTATION;
     }
-    
+
     InventationBO inventationBO = new InventationBO();
     inventationBO.setEmail(form.getEmail());
-    
+
     profileService.invite(inventationBO);
-    
+
     return Views.INVENTATION_SUCCESS;
   }
 
@@ -93,7 +94,7 @@ public class UserController extends NavigationController {
     String view = Views.ACTIVATED;
     if (dto == null) {
       view = Views.ACTIVATED_ERROR;
-    }else{
+    } else {
       doAutoLogin(dto.getEmail(), dto.getPassword());
     }
 
@@ -152,8 +153,8 @@ public class UserController extends NavigationController {
     model.addAttribute("registrationForm", registrationForm);
     return Views.SIGNUP;
   }
-  
-  
+
+
   @RequestMapping(value = Actions.SIGNUP_WITH_INVITE, method = RequestMethod.GET)
   public String signupWithInvite(@PathVariable String inventationCode, ModelMap model) {
     RegistrationForm registrationForm = new RegistrationForm();
@@ -161,37 +162,41 @@ public class UserController extends NavigationController {
     model.addAttribute("registrationForm", registrationForm);
     return Views.SIGNUP;
   }
-  
-  
+
+
   @RequestMapping(value = Actions.NEW_INVENTATION, method = RequestMethod.GET)
   public String newInvite(ModelMap model) {
     InventationForm registrationForm = new InventationForm();
     model.addAttribute("inventationForm", registrationForm);
     return Views.INVENTATION;
   }
-  
-  
+
+
   @RequestMapping(value = Actions.LOGOUT, method = RequestMethod.GET)
-  public String logout() {
+  public String logout(ModelMap map) {
     SecurityContextHolder.clearContext();
+    map.addAttribute("articles", true);
+    map.addAttribute("articlesnew", true);
     return ArticlesController.Views.ARTICLES;
   }
-  
-  
+
+
   private void doAutoLogin(String username, String password) {
     try {
-        // Must be called from request filtered by Spring Security, otherwise SecurityContextHolder is not updated
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, password);
-        token.setDetails(new WebAuthenticationDetails(request));
-        Authentication authentication = this.authenticationProvider.authenticate(token);
-        logger.debug("Logging in with"+ authentication.getPrincipal());
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+      // Must be called from request filtered by Spring Security, otherwise SecurityContextHolder is
+      // not updated
+      UsernamePasswordAuthenticationToken token =
+          new UsernamePasswordAuthenticationToken(username, password);
+      token.setDetails(new WebAuthenticationDetails(request));
+      Authentication authentication = this.authenticationProvider.authenticate(token);
+      logger.debug("Logging in with" + authentication.getPrincipal());
+      SecurityContextHolder.getContext().setAuthentication(authentication);
     } catch (Exception e) {
-        SecurityContextHolder.getContext().setAuthentication(null);
-        logger.error("Failure in autoLogin", e);
+      SecurityContextHolder.getContext().setAuthentication(null);
+      logger.error("Failure in autoLogin", e);
     }
 
-}
+  }
 
   public interface Actions {
     public static final String SIGNUP_WITH_INVITE = "/signup/{inventationCode}";

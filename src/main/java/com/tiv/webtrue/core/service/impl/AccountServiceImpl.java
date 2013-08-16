@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.tiv.webtrue.dao.AbstractDao;
 import com.tiv.webtrue.dao.AccountDao;

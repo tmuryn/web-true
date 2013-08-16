@@ -3,33 +3,32 @@
 
 
 </div>
-<div class="span2">
+<div class="col-lg-2">
 
 	<div
-		style="position: relative; width: 300px; height: 500px; text-align: center; margin: 0px auto;">
+		style="position: relative; width: 250px; height: 500px; text-align: center; margin: 0px auto;">
 		<a target="_blank" onclick="return ar_sendPix('');"
 			href="//ad.adriver.ru/cgi-bin/click.cgi?sid=176776&amp;ad=392169&amp;bid=2439498&amp;bt=52&amp;bn=1&amp;pz=0&amp;xpid=BbFpuIt2ntHEJCyLoVEtrIiWClV8&amp;ref=http:%2f%2fhabrahabr.ru%2fposts%2ftop%2f&amp;custom=&amp;rleurl="><img
 			border="0" alt=""
-			src="http://masterh4.adriver.ru/images/0002439/0002439498/0/Ff-4.png"></a>
-
-		<br> <br>
+			src="http://masterh4.adriver.ru/images/0002439/0002439498/0/Ff-4.png"
+			width="250"></a> <br> <br>
 		<div class="well">
 			Категории <br> <br>
 			<form class="form-horizontal">
 
-				<select>
+				<select class="form-control">
 					<option selected="true">Авто, Мото</option>
 					<option>Бизнес, Финансы</option>
 					<option>Еда, Кулинария</option>
 					<option>Знакомства, Любовь, Отношения</option>
 					<option>Красота и Здоровье</option>
-				</select> <br>
-				<br> <select>
+				</select> <br /> <select class="form-control">
 					<option>Автострахование</option>
 					<option>Выбор автомобиля, мотоцикла</option>
 					<option>ГИБДД, Обучение, Права</option>
-				</select> <br> <br>
-				<button type="submit" class="btn">Перейти</button>
+				</select> <br />
+
+				<button type="submit" class="btn btn-default form-control">Перейти</button>
 
 
 			</form>
@@ -46,47 +45,16 @@
 </div>
 <!-- /container -->
 
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-button.js"></script>
-<!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript"
-	src="http://platform.twitter.com/widgets.js"></script>
-<script src="http://twitter.github.io/bootstrap/assets/js/jquery.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-alert.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-modal.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-dropdown.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tab.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tooltip.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-popover.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-button.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-carousel.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-typeahead.js"></script>
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/bootstrap-affix.js"></script>
 
+<script src="<%=path%>/resources/bootstrap/js/bootstrap.js"></script>
+<script src="<%=path%>/resources/bootstrap/js/holder.js/"></script>
+<script src="<%=path%>/resources/bootstrap/js/application.js/"></script>
+<script src="<%=path%>/resources/bootstrap/js/jquery.js/"></script>
+<script src="<%=path%>/resources/bootstrap/js/widgets.js/"></script>
 <script
-	src="http://twitter.github.io/bootstrap/assets/js/holder/holder.js"></script>
+	src="<%=path%>/resources/bootstrap/js/bootstrap-dropdown.js"></script>
 <script
-	src="http://twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
-
-<script
-	src="http://twitter.github.io/bootstrap/assets/js/application.js"></script>
-
+	src="<%=path%>/resources/bootstrap/js/bootstrap-collapse.js"></script>
 
 </body>
 </html>

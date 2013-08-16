@@ -4,6 +4,7 @@ package com.tiv.webtrue.web.controller;
 import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,16 +23,18 @@ public final class HomeController extends NavigationController {
    * @throws IOException Input/Output exception
    */
   @RequestMapping(value = Actions.ROOT, method = RequestMethod.GET)
-  public String root() throws IOException {
-    return home();
+  public String root(ModelMap map) throws IOException {
+    return home(map);
   }
   
   
   @RequestMapping(value = Actions.HOME, method = RequestMethod.GET)
-  public String home() throws IOException {
+  public String home(ModelMap map) throws IOException {
     action("articles", ArticlesController.Actions.ARTICLES);
     return Views.HOME;
   }
+  
+  
   
   
   public interface Actions {
