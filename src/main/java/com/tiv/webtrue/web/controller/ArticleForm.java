@@ -7,6 +7,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class ArticleForm {
 
+  private Long id;
+  
   @NotEmpty
   @Length(min = 10, max = 250)
   private String title;
@@ -51,6 +53,16 @@ public class ArticleForm {
   public void setAccept(boolean accept) {
     this.accept = accept;
   }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+  
+  
 
 
 

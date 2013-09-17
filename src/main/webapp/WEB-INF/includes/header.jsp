@@ -128,7 +128,7 @@ body {
 			<div class="col-lg-9">
 
 				<ul class="nav nav-pills">
-					<li class="<c:if test="${not empty articles}">active</c:if>"><a href="<wt:action action="article/list" apiId="${api.id}" />">Статьи</a></li>
+					<li class="<c:if test="${topic=='articles'}">active</c:if>"><a href="<wt:action action="article/list" apiId="${api.id}" />">Статьи</a></li>
 					<li><a href="#">Теги</a></li>
 					<li><a href="questions-answers.html">Вопросы</a></li>
 				</ul>

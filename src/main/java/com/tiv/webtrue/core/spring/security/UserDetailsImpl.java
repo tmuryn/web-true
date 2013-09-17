@@ -6,6 +6,8 @@ import java.util.HashSet;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.tiv.webtrue.dao.dto.AccountDTO;
+
 public class UserDetailsImpl implements UserDetails {
 
   private static final long serialVersionUID = -6509897037222767090L;
@@ -13,11 +15,13 @@ public class UserDetailsImpl implements UserDetails {
   private Collection<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
   private String password;
   private String username;
+  private AccountDTO accountDTO;
    
-  public UserDetailsImpl(String username, String password, Collection<GrantedAuthority> authorities){
+  public UserDetailsImpl(String username, String password, Collection<GrantedAuthority> authorities, AccountDTO accountDTO){
    this.username = username;
    this.password = password;
    this.authorities = authorities;
+   this.accountDTO = accountDTO;
   }
   
   public Collection<GrantedAuthority> getAuthorities() {
@@ -47,5 +51,15 @@ public class UserDetailsImpl implements UserDetails {
   public boolean isEnabled() {
    return true;
   }
+
+  public AccountDTO getAccountDTO() {
+    return accountDTO;
+  }
+
+  public void setAccountDTO(AccountDTO accountDTO) {
+    this.accountDTO = accountDTO;
+  }
+  
+  
   
 }

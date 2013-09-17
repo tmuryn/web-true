@@ -43,9 +43,7 @@ public class UserController extends NavigationController {
 
   @RequestMapping(value = Actions.SIGNIN, method = RequestMethod.GET)
   public String signin(ModelMap map) {
-    map.addAttribute("articles", true);
-    map.addAttribute("articlesmy", true);
-    return ArticlesController.Views.ARTICLES;
+    return postRedirectGet(ArticlesController.Actions.ARTICLES);
   }
 
   @RequestMapping(value = Actions.LOGIN, method = RequestMethod.GET)
@@ -175,9 +173,7 @@ public class UserController extends NavigationController {
   @RequestMapping(value = Actions.LOGOUT, method = RequestMethod.GET)
   public String logout(ModelMap map) {
     SecurityContextHolder.clearContext();
-    map.addAttribute("articles", true);
-    map.addAttribute("articlesnew", true);
-    return ArticlesController.Views.ARTICLES;
+    return postRedirectGet(ArticlesController.Actions.ARTICLES);
   }
 
 

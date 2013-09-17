@@ -1,14 +1,18 @@
 package com.tiv.webtrue.web.controller;
 
-import org.dozer.Mapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+
+import org.dozer.Mapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+
+import com.tiv.webtrue.core.spring.security.UserDetailsImpl;
+import com.tiv.webtrue.dao.dto.AccountDTO;
 
 
 /**
@@ -21,7 +25,7 @@ public class NavigationController {
 
   public static final String ACTIONS =
       "com_tic_webtrue_web_exception_GlobalExceptionHandler_ACTIONS";
-  private static final String REDIRECT_FORMAT = "redirect:/backend/%s";
+  private static final String REDIRECT_FORMAT = "redirect:/%s";
 
   @Autowired
   private HttpServletRequest request;
@@ -54,6 +58,16 @@ public class NavigationController {
 
   public static String formatUrl(String action, String toReplace, String replaceBy) {
     return action.replace(toReplace, replaceBy);
+  }
+  
+  public AccountDTO getCurrentAccount() {
+    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    if (principal != null && principal instanceof String) {
+        //principal will be  String if no user found, in result we receive string with value = anonymousUser
+        return null;
+    }
+    UserDetailsImpl userDetails = (UserDetailsImpl) principal;
+    return userDetails.getAccountDTO();
   }
 
 

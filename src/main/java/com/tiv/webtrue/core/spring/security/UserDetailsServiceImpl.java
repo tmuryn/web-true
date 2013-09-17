@@ -23,7 +23,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   @Autowired
   private AccountService accountService;
   
-
   static {
     GrantedAuthority authorityAdmin = new GrantedAuthorityImpl("ADMIN");
     GrantedAuthority authorityGuest = new GrantedAuthorityImpl("GUEST");
@@ -43,9 +42,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
       authorities.add(new GrantedAuthorityImpl(role.toString()));
     }
     
-   
     //authorities.add(new GrantedAuthorityImpl(Role.ADMIN.toString()));
-    UserDetailsImpl matchingUser = new UserDetailsImpl(username, accountDTO.getPassword(), authorities);
+    UserDetailsImpl matchingUser = new UserDetailsImpl(username, accountDTO.getPassword(), authorities, accountDTO);
 
     return matchingUser;
   }
